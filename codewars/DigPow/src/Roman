@@ -1,0 +1,96 @@
+public class App {
+    public static void main(String[] args) throws Exception {
+        // System.out.println("Hello, World!");
+        System.out.println(conversion(4));
+        // Create a function taking a positive integer as its parameter and returning a
+        // string containing the Roman Numeral representation of that integer.
+        // Modern Roman numerals are written by expressing each digit separately
+        // starting with the left most digit and skipping any digit with a value of
+        // zero. In Roman numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in
+        // MCMXC. 2008 is written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman
+        // symbol in descending order: MDCLXVI.
+        // Example: conversion.solution(1000); //should return "M"
+        // Symbol Value
+        // I 1
+        // V 5
+        // X 10
+        // L 50
+        // C 100
+        // D 500
+        // M 1,000
+    }
+
+    public static String conversion(int n) {
+        String result = "";
+        if (n == 0) {
+            return "";
+        } else {
+            while (n >= 1000) {
+                result = result + "M";
+                n = n - 1000;
+                System.out.println("El n que queda con M: " + n);
+            }
+            if (n >= 900 && n < 1000) {
+                result = result + "CM";
+                n = n - 900;
+                System.out.println("El n que queda con CM: " + n);
+            }
+            while (n >= 500) {
+                result = result + "D";
+                n = n - 500;
+                System.out.println("El n que queda con D: " + n);
+            }
+            if (n >= 400 && n < 500) {
+                result = result + "CD";
+                n = n - 400;
+                System.out.println("El n que queda con CD: " + n);
+            }
+            while (n >= 100) {
+                result = result + "C";
+                n = n - 100;
+                System.out.println("El n que queda con C: " + n);
+            }
+            if (n >= 90 && n < 100) {
+                result = result + "XC";
+                n = n - 90;
+                System.out.println("El n que queda con XC: " + n);
+            }
+            while (n >= 50) {
+                result = result + "L";
+                n = n - 50;
+                System.out.println("El n que queda con L: " + n);
+            }
+            if (n >= 40 && n < 50) {
+                result = result + "XL";
+                n = n - 40;
+                System.out.println("El n que queda con XL: " + n);
+            }
+            while (n >= 10) {
+                result = result + "X";
+                n = n - 10;
+                System.out.println("El n que queda con X: " + n);
+            }
+            if (n == 9) {
+                result = result + "IX";
+                n = n - 9;
+                System.out.println("El n que queda con IX: " + n);
+            }
+            while (n >= 5) {
+                result = result + "V";
+                n = n - 5;
+                System.out.println("El n que queda con V: " + n);
+            }
+            if (n == 4) {
+                result = result + "IV";
+                n = n - 4;
+                System.out.println("El n que queda con IV: " + n);
+            }
+            while (n >= 1) {
+                result = result + "I";
+                n = n - 1;
+                System.out.println("El n que queda con I: " + n);
+            }
+        }
+        return result;
+    }
+}
